@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THPT Thái Hòa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+
+/* BODY */
+body{
+background:#f5f7fa;
+color:#0f172a;
+transition:0.4s;
+}
+
+body.dark{
+background:#020617;
+color:#e2e8f0;
+}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:18px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(2,6,23,0.7);
+backdrop-filter:blur(12px);
+z-index:1000;
+}
+
+.logo{
+font-weight:800;
+font-size:20px;
+letter-spacing:2px;
+background:linear-gradient(90deg,#38bdf8,#6366f1);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+transition:0.3s;
+}
+
+nav a:hover{opacity:0.7}
+
+.toggle{
+cursor:pointer;
+background:rgba(56,189,248,0.2);
+padding:6px 10px;
+border-radius:8px;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+position:relative;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+/* SLIDER */
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
+opacity:0;
+animation:fadeZoom 15s infinite;
+}
+
+.slide:nth-child(1){background:url('images/truong.jpg');animation-delay:0s;}
+.slide:nth-child(2){background:url('images/truong.jpg');animation-delay:5s;}
+.slide:nth-child(3){background:url('images/truong.jpg');animation-delay:10s;}
+
+@keyframes fadeZoom{
+0%{opacity:0;transform:scale(1)}
+10%{opacity:1}
+40%{opacity:1;transform:scale(1.08)}
+50%{opacity:0}
+100%{opacity:0}
+}
+
+/* OVERLAY */
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(rgba(0,0,0,.6),rgba(2,6,23,.9));
+}
+
+/* HERO TEXT */
+.hero-content{position:relative;z-index:2}
+
+.hero h1{
+font-size:70px;
+font-weight:800;
+background:linear-gradient(90deg,#ffffff,#38bdf8,#6366f1);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 0 30px rgba(56,189,248,0.3);
+animation:fadeUp 1.5s;
+}
+
+.hero p{
+margin-top:15px;
+font-size:22px;
+opacity:0.85;
+}
+
+.btn{
+margin-top:25px;
+display:inline-block;
+padding:14px 30px;
+background:linear-gradient(90deg,#2563eb,#6366f1);
+color:white;
+border-radius:12px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+box-shadow:0 10px 30px rgba(37,99,235,0.4);
+}
+
+/* SECTION COLORFUL */
+.section{
+padding:100px 40px;
+text-align:center;
+background:linear-gradient(120deg,#f0f9ff,#eef2ff);
+}
+
+body.dark .section{
+background:linear-gradient(120deg,#020617,#0f172a);
+}
+
+.section-title{
+font-size:38px;
+font-weight:700;
+margin-bottom:10px;
+background:linear-gradient(90deg,#2563eb,#9333ea);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.section-sub{
+opacity:0.7;
+margin-bottom:40px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+/* CARD */
+.card{
+padding:35px;
+border-radius:20px;
+color:white;
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+.icon{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.color1{background:linear-gradient(135deg,#3b82f6,#2563eb)}
+.color2{background:linear-gradient(135deg,#8b5cf6,#6366f1)}
+.color3{background:linear-gradient(135deg,#f59e0b,#f97316)}
+
+.card:hover{
+transform:translateY(-12px) scale(1.05);
+box-shadow:0 20px 60px rgba(0,0,0,0.2);
+}
+
+.card::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+top:-100%;
+left:-100%;
+transition:0.6s;
+}
+
+.card:hover::before{
+top:100%;
+left:100%;
+}
+
+/* FOOTER */
+footer{
+background:#020617;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">THPT THÁI HÒA</div>
+<div>
+<a href="gioithieu.html">Giới thiệu</a>
+<a href="giaovien.html">Giáo viên</a>
+<a href="clb.html">CLB</a>
+<span class="toggle" onclick="toggleDark()">🌙</span>
+</div>
+</nav>
+
+<div class="hero">
+
+<div class="slide"></div>
+<div class="slide"></div>
+<div class="slide"></div>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+<h1>THPT THÁI HÒA</h1>
+<p>Nơi khơi nguồn tri thức và phát triển toàn diện</p>
+<a href="gioithieu.html" class="btn">Khám phá</a>
+</div>
+
+</div>
+
+<div class="section">
+
+<h2 class="section-title">Khám phá THPT Thái Hòa</h2>
+<p class="section-sub">Môi trường học tập hiện đại – năng động – sáng tạo</p>
+
+<div class="grid">
+
+<div class="card color1">
+<div class="icon">🎓</div>
+<h3>Chất lượng giáo dục</h3>
+<p>Đội ngũ giáo viên tận tâm, chuyên môn cao.</p>
+</div>
+
+<div class="card color2">
+<div class="icon">🚀</div>
+<h3>Câu lạc bộ</h3>
+<p>Đa dạng hoạt động phát triển kỹ năng.</p>
+</div>
+
+<div class="card color3">
+<div class="icon">⚽</div>
+<h3>Hoạt động ngoại khóa</h3>
+<p>Phong phú và năng động.</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+<p>© THPT Thái Hòa-Dinhanh12k</p>
+</footer>
+
+<script>
+function toggleDark(){
+document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>

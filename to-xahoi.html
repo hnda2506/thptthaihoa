@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tổ Xã hội</title>
+
+<style>
+body{font-family:Poppins;background:linear-gradient(120deg,#fef9c3,#f8fafc);margin:0}
+
+nav{padding:15px;background:#0f172a}
+nav a{color:white;text-decoration:none}
+
+.hero{
+height:50vh;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+background-size:cover;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:40px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+transition:.3s;
+text-align:center;
+}
+
+.card:hover{transform:scale(1.05)}
+
+.badge{background:#f59e0b;color:white;padding:5px 10px;border-radius:6px}
+</style>
+</head>
+
+<body>
+
+<nav><a href="giaovien.html">← Quay lại</a></nav>
+
+<div class="hero"><h1>TỔ XÃ HỘI</h1></div>
+
+<div class="grid">
+
+<div class="card"><h3>Phạm Lệ Chi</h3><span class="badge">Giáo viên</span></div>
+<div class="card"><h3>Nguyễn Xuân An</h3><span class="badge">Giáo viên</span></div>
+<div class="card"><h3>Nguyễn Thị Quỳnh Hoa</h3><span class="badge">Giáo viên</span></div>
+<div class="card"><h3>Phan Thị Hương Thanh</h3><span class="badge">Tổ trưởng</span></div>
+
+</div>
+
+</body>
+</html>
